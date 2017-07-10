@@ -10,6 +10,7 @@ class MemcacheStoreTest extends TestCase
     public function testGetReturnsNullWhenNotFound()
     {
         $memcached = $this->getMock('Memcached', array('get'));
+        $memcached->shouldReceive('getResultCode')->once()->andReturn(0);
         $memcached->expects($this->once())->method('get')->with($this->equalTo('foo:bar'))->will(
             $this->returnValue(null)
         );
@@ -20,6 +21,7 @@ class MemcacheStoreTest extends TestCase
     public function testMemcacheValueIsReturned()
     {
         $memcached = $this->getMock('Memcached', array('get'));
+        $memcached->shouldReceive('getResultCode')->once()->andReturn(0);
         $memcached->expects($this->once())->method('get')->will($this->returnValue('bar'));
         $store = new \Illuminate\Cache\MemcachedStore($memcached);
         $this->assertEquals('bar', $store->get('foo'));
