@@ -1,0 +1,29 @@
+{
+    "name": "icovn/laravel-twemproxy",
+    "description": "A library help old laravel works with twemproxy",
+    "keywords":     ["Laravel", "Laravel 5", "Cache", "Caching", "Memcache", "Twemproxy"],
+    "homepage":     "https://github.com/icovn/laravel-twemproxy",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Nguyen Quang Huy",
+            "email": "quanghuy.ico@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/cache": "5.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "illuminate/session": "5.2.*",
+        "illuminate/cache": "5.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Net\\Friend\\Laravel\\Cache\\": "src/net/friend/laravel/cache/"
+        }
+    },
+    "minimum-stability": "stable"
+}
